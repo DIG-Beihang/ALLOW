@@ -5,6 +5,7 @@
 This repository is the official PyTorch implemetation of paper "**Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection**".
 
 ![image](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/AnnealingOWOD.png)
+![Alt Text](./docs/framework.gif)
 
 **NOTE**: 
 - In the code, We use the `cooling` variable to refer to the `extending` phase of a paper.
