@@ -1,0 +1,352 @@
+running build
+running build_py
+running build_ext
+creating /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg
+creating /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr
+creating /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR
+creating /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models
+creating /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops
+creating /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src
+creating /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cpu
+creating /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda
+Emitting ninja build file /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/3] c++ -MMD -MF /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cpu/ms_deform_attn_cpu.o.d -pthread -B /data/home/scv6140/.conda/envs/owdetr/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/TH -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/THC -I/data/apps/cuda/10.2/include -I/data/home/scv6140/.conda/envs/owdetr/include/python3.7m -c -c /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cpu/ms_deform_attn_cpu.cpp -o /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cpu/ms_deform_attn_cpu.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=MultiScaleDeformableAttention -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+[2/3] /data/apps/cuda/10.2/bin/nvcc --generate-dependencies-with-compile --dependency-output /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.o.d -DWITH_CUDA -I/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/TH -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/THC -I/data/apps/cuda/10.2/include -I/data/home/scv6140/.conda/envs/owdetr/include/python3.7m -c -c /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu -o /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DCUDA_HAS_FP16=1 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=MultiScaleDeformableAttention -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_70,code=compute_70 -gencode=arch=compute_70,code=sm_70 -std=c++14
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_im2col_cuda.cuh(261): warning: variable "q_col" was declared but never referenced
+          detected during instantiation of "void ms_deformable_im2col_cuda(cudaStream_t, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *) [with scalar_t=double]" 
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu(64): here
+
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_im2col_cuda.cuh(762): warning: variable "q_col" was declared but never referenced
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" 
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu(134): here
+
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_im2col_cuda.cuh(872): warning: variable "q_col" was declared but never referenced
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" 
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu(134): here
+
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_im2col_cuda.cuh(331): warning: variable "q_col" was declared but never referenced
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" 
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu(134): here
+
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_im2col_cuda.cuh(436): warning: variable "q_col" was declared but never referenced
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" 
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu(134): here
+
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_im2col_cuda.cuh(544): warning: variable "q_col" was declared but never referenced
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" 
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu(134): here
+
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_im2col_cuda.cuh(649): warning: variable "q_col" was declared but never referenced
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" 
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu(134): here
+
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu: In function ‘at::Tensor ms_deform_attn_cuda_forward(const at::Tensor&, const at::Tensor&, const at::Tensor&, const at::Tensor&, const at::Tensor&, int)’:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:34:62: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(value.type().is_cuda(), "value must be a CUDA tensor");
+                                                              ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:35:71: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(spatial_shapes.type().is_cuda(), "spatial_shapes must be a CUDA tensor");
+                                                                       ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:36:74: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(level_start_index.type().is_cuda(), "level_start_index must be a CUDA tensor");
+                                                                          ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:37:69: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(sampling_loc.type().is_cuda(), "sampling_loc must be a CUDA tensor");
+                                                                     ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:38:68: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(attn_weight.type().is_cuda(), "attn_weight must be a CUDA tensor");
+                                                                    ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu: In lambda function:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:43: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+         AT_DISPATCH_FLOATING_TYPES(value.type(), "ms_deform_attn_forward_cuda", ([&] {
+                                           ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:98: warning: ‘c10::ScalarType detail::scalar_type(const at::DeprecatedTypeProperties&)’ is deprecated: passing at::DeprecatedTypeProperties to an AT_DISPATCH macro is deprecated, pass an at::ScalarType instead [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/Dispatch.h:109:1: note: declared here
+ inline at::ScalarType scalar_type(const at::DeprecatedTypeProperties& t) {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu: In lambda function:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:864: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:943: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:979: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:1012: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:1095: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:1253: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu: In lambda function:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:2008: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:2087: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:2123: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:2155: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:2237: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:64:2394: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu: In function ‘std::vector<at::Tensor> ms_deform_attn_cuda_backward(const at::Tensor&, const at::Tensor&, const at::Tensor&, const at::Tensor&, const at::Tensor&, const at::Tensor&, int)’:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:100:62: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(value.type().is_cuda(), "value must be a CUDA tensor");
+                                                              ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:101:71: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(spatial_shapes.type().is_cuda(), "spatial_shapes must be a CUDA tensor");
+                                                                       ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:102:74: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(level_start_index.type().is_cuda(), "level_start_index must be a CUDA tensor");
+                                                                          ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:103:69: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(sampling_loc.type().is_cuda(), "sampling_loc must be a CUDA tensor");
+                                                                     ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:104:68: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(attn_weight.type().is_cuda(), "attn_weight must be a CUDA tensor");
+                                                                    ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:105:68: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     AT_ASSERTM(grad_output.type().is_cuda(), "grad_output must be a CUDA tensor");
+                                                                    ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu: In lambda function:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:43: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+         AT_DISPATCH_FLOATING_TYPES(value.type(), "ms_deform_attn_backward_cuda", ([&] {
+                                           ^
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:1: note: declared here
+   DeprecatedTypeProperties & type() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:98: warning: ‘c10::ScalarType detail::scalar_type(const at::DeprecatedTypeProperties&)’ is deprecated: passing at::DeprecatedTypeProperties to an AT_DISPATCH macro is deprecated, pass an at::ScalarType instead [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/Dispatch.h:109:1: note: declared here
+ inline at::ScalarType scalar_type(const at::DeprecatedTypeProperties& t) {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu: In lambda function:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:874: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:900: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:979: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:1015: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:1048: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:1131: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:1292: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:1376: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:1464: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu: In lambda function:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:2281: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:2306: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:2385: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:2421: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:2453: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:2535: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:2695: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:2778: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.cu:134:2865: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:395:1: note: declared here
+   T * data() const {
+ ^
+[3/3] c++ -MMD -MF /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/vision.o.d -pthread -B /data/home/scv6140/.conda/envs/owdetr/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DWITH_CUDA -I/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/TH -I/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/THC -I/data/apps/cuda/10.2/include -I/data/home/scv6140/.conda/envs/owdetr/include/python3.7m -c -c /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/vision.cpp -o /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/vision.o -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=MultiScaleDeformableAttention -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++14
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/Parallel.h:140:0,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/utils.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn/cloneable.h:5,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/nn.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/all.h:13,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/extension.h:4,
+                 from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cpu/ms_deform_attn_cpu.h:12,
+                 from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/ms_deform_attn.h:13,
+                 from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/vision.cpp:11:
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/ParallelOpenMP.h:83:0: warning: ignoring #pragma omp parallel [-Wunknown-pragmas]
+ #pragma omp parallel for if ((end - begin) >= grain_size)
+ ^
+In file included from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/vision.cpp:11:0:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/ms_deform_attn.h: In function ‘at::Tensor ms_deform_attn_forward(const at::Tensor&, const at::Tensor&, const at::Tensor&, const at::Tensor&, const at::Tensor&, int)’:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/ms_deform_attn.h:29:20: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     if (value.type().is_cuda())
+                    ^
+In file included from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3:0,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader_options.h:4,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader/base.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader/stateful.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/all.h:8,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/extension.h:4,
+                 from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cpu/ms_deform_attn_cpu.h:12,
+                 from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/ms_deform_attn.h:13,
+                 from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/vision.cpp:11:
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:30: note: declared here
+   DeprecatedTypeProperties & type() const {
+                              ^
+In file included from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/vision.cpp:11:0:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/ms_deform_attn.h: In function ‘std::vector<at::Tensor> ms_deform_attn_backward(const at::Tensor&, const at::Tensor&, const at::Tensor&, const at::Tensor&, const at::Tensor&, const at::Tensor&, int)’:
+/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/ms_deform_attn.h:51:20: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+     if (value.type().is_cuda())
+                    ^
+In file included from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/Tensor.h:3:0,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/Context.h:4,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/ATen.h:9,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/types.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader_options.h:4,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader/base.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader/stateful.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data/dataloader.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/data.h:3,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/csrc/api/include/torch/all.h:8,
+                 from /data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/torch/extension.h:4,
+                 from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cpu/ms_deform_attn_cpu.h:12,
+                 from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/ms_deform_attn.h:13,
+                 from /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/vision.cpp:11:
+/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/include/ATen/core/TensorBody.h:303:30: note: declared here
+   DeprecatedTypeProperties & type() const {
+                              ^
+g++ -pthread -shared -B /data/home/scv6140/.conda/envs/owdetr/compiler_compat -L/data/home/scv6140/.conda/envs/owdetr/lib -Wl,-rpath=/data/home/scv6140/.conda/envs/owdetr/lib -Wl,--no-as-needed -Wl,--sysroot=/ /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cpu/ms_deform_attn_cpu.o /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/cuda/ms_deform_attn_cuda.o /data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/build/temp.linux-x86_64-3.7/data/run01/scv6140/zzg/ow-detr/OW-DETR/models/ops/src/vision.o -L/data/home/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/torch/lib -L/data/apps/cuda/10.2/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda -o build/lib.linux-x86_64-3.7/MultiScaleDeformableAttention.cpython-37m-x86_64-linux-gnu.so
+running install
+running bdist_egg
+running egg_info
+writing manifest file 'MultiScaleDeformableAttention.egg-info/SOURCES.txt'
+running install_lib
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/functions
+creating build/bdist.linux-x86_64/egg/modules
+byte-compiling build/bdist.linux-x86_64/egg/functions/__init__.py to __init__.cpython-37.pyc
+byte-compiling build/bdist.linux-x86_64/egg/functions/ms_deform_attn_func.py to ms_deform_attn_func.cpython-37.pyc
+byte-compiling build/bdist.linux-x86_64/egg/modules/ms_deform_attn.py to ms_deform_attn.cpython-37.pyc
+byte-compiling build/bdist.linux-x86_64/egg/modules/__init__.py to __init__.cpython-37.pyc
+byte-compiling build/bdist.linux-x86_64/egg/MultiScaleDeformableAttention.py to MultiScaleDeformableAttention.cpython-37.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying MultiScaleDeformableAttention.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying MultiScaleDeformableAttention.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying MultiScaleDeformableAttention.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying MultiScaleDeformableAttention.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+__pycache__.MultiScaleDeformableAttention.cpython-37: module references __file__
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+removing '/data/run01/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg' (and everything under it)
+creating /data/run01/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg
+Extracting MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg to /data/run01/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages
+byte-compiling /data/run01/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg/MultiScaleDeformableAttention.py to MultiScaleDeformableAttention.cpython-37.pyc
+byte-compiling /data/run01/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg/functions/__init__.py to __init__.cpython-37.pyc
+byte-compiling /data/run01/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg/functions/ms_deform_attn_func.py to ms_deform_attn_func.cpython-37.pyc
+byte-compiling /data/run01/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg/modules/__init__.py to __init__.cpython-37.pyc
+byte-compiling /data/run01/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg/modules/ms_deform_attn.py to ms_deform_attn.cpython-37.pyc
+MultiScaleDeformableAttention 1.0 is already the active version in easy-install.pth
+
+Installed /data/run01/scv6140/.conda/envs/owdetr/lib/python3.7/site-packages/MultiScaleDeformableAttention-1.0-py3.7-linux-x86_64.egg
+Processing dependencies for MultiScaleDeformableAttention==1.0
+Finished processing dependencies for MultiScaleDeformableAttention==1.0
