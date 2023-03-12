@@ -6,7 +6,7 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 
 ![image](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/AnnealingOWOD.png)
 <p align="center">
-  <img src="./docs/framework.gif" alt="framework">
+  <img src="https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/docs/framework.gif" alt="framework">
 </p>
 
 **NOTE**: 
