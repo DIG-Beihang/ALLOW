@@ -4,7 +4,9 @@
 
 This repository is the official PyTorch implemetation of paper "**Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection**".
 
-**NOTE**: In the `master` branch, we applied our method to the faster-rcnn framework, and in the `ow-detr` branch, we applied our method to the same deformable detr framework as ow-detr
+**NOTE**: 
+- In the code, We use the `cooling` variable to refer to the `extending` phase of a paper.
+- In the `master` branch, we applied our method to the faster-rcnn framework, and in the `ow-detr` branch, we applied our method to the same deformable detr framework as ow-detr
 
 ## Install
 ### Requirements
