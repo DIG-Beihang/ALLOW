@@ -17,14 +17,42 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 - If you want to learn more about the disentanglement and the visualization of our approach, please check out the [supplementary video](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/video%20(4).mp4).
 
 ## Key Code
-**Our method is simple to implement but very effective**
+**Our method is simple to implement but very effective!!!**
+
+**NOTE! You only need to enable our method during the extending stage.**
+
+**If it is not the extending stage, simply set cfg.OWOD.COOLING = False to easily disable this feature.**
 - First, modify the annotation of the data, we give all data an additional unknown class label, the code can be found [here](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/ade50266435d699ece227192e08a46c26d57784f/detectron2/data/common.py#L52)
 ```
 if self._map_func.is_train:
-    data['instances'].ori_classes = data['instances'].gt_classes.clone()
-    data['instances'].gt_classes[:] = 80
+  data['instances'].ori_classes = data['instances'].gt_classes.clone()
+  data['instances'].gt_classes[:] = 80
 ```
-- 
+- Second, during the extending phase of the training, which is controlled by the cfg.OWOD.COOLING parameter, we need to freeze all parameters except for the classifier, and the specific code is [here](https://github.com/DIG-Beihang/ALL-OWOD/blob/c8bfcc8074407370184a48af58e20cdb22aa1aac/detectron2/engine/defaults.py#L285). Note that the optimizer in Detectron2 is initialized after this step, and during initialization, it ignores the parameters that do not have gradients.
+```
+if cfg.OWOD.COOLING:
+  for name, param in model.named_parameters():
+    if 'cls_score' not in name:
+      param.requires_grad = False
+```
+- Finally, after calling the new loss function, you can start the training! Code can be found [here](https://github.com/DIG-Beihang/ALL-OWOD/blob/c8bfcc8074407370184a48af58e20cdb22aa1aac/detectron2/modeling/roi_heads/fast_rcnn.py#L334).
+```
+def mixup_loss(self):
+  if self._no_instances:
+    return 0.0 * self.pred_class_logits.sum()
+  else:
+    self._log_accuracy()
+    self.pred_class_logits[:, self.invalid_class_range] = -10e10
+    storage = get_event_storage()
+    if self.cooling:
+        lam = max(self.peak - (storage.iter / self.cool_iter), 0)
+    else:
+        lam = 0
+    loss_pred = \
+        (1-lam) * F.cross_entropy(self.pred_class_logits, self.ori_classes, reduction="mean", weight=self.weights) + \
+        lam*F.cross_entropy(self.pred_class_logits, self.gt_classes, reduction="mean", weight=self.weights)
+    return loss_pred
+```
 
 ## Install
 ### Requirements
