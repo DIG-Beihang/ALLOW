@@ -14,8 +14,7 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 **NOTE**: 
 - In the code, We use the `cooling` variable to refer to the `extending` phase of a paper.
 - In the `master` branch, we applied our method to the faster-rcnn framework, and in the `ow-detr` branch, we applied our method to the same deformable detr framework as ow-detr.
-- If you want to learn more about the disentanglement and the visualization of our approach, please check out the [supplementary video]
-(https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/video%20(4).mp4).
+- If you want to learn more about the disentanglement and the visualization of our approach, please check out the [supplementary video](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/video%20(4).mp4).
 
 ## Install
 ### Requirements
