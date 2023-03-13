@@ -16,6 +16,16 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 - In the `master` branch, we applied our method to the faster-rcnn framework, and in the `ow-detr` branch, we applied our method to the same deformable detr framework as ow-detr.
 - If you want to learn more about the disentanglement and the visualization of our approach, please check out the [supplementary video](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/video%20(4).mp4).
 
+## Key Code
+**Our method is simple to implement but very effective**
+- First, modify the annotation of the data, we give all data an additional unknown class label, the code can be found [here](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/ade50266435d699ece227192e08a46c26d57784f/detectron2/data/common.py#L52)
+```
+if self._map_func.is_train:
+    data['instances'].ori_classes = data['instances'].gt_classes.clone()
+    data['instances'].gt_classes[:] = 80
+```
+- 
+
 ## Install
 ### Requirements
 - Install detectron2, please refer to [INSTALL.md](./INSTALL.md).
