@@ -13,6 +13,33 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 - In the code, We use the `cooling` variable to refer to the `extending` phase of a paper.
 - In the `master` branch, we applied our method to the faster-rcnn framework, and in the `ow-detr` branch, we applied our method to the same deformable detr framework as ow-detr
 
+## Key Code
+- We did not use the relevant innovations of ow-detr. Specifically, we removed --unmatched_boxes, --NC_branch, --nc_loss_coef, --top_unk, and --nc_epoch from the script to train the closed-set model, and added --cooling and --cooling_prev to train the extending stage model.
+- During the extending phase of the training, which is controlled by the args.cooling parameter, we need to freeze all parameters except for the classifier, and the specific code is [here](https://github.com/DIG-Beihang/ALL-OWOD/blob/5f05d39f9c6f6edc405eb269be720d5a291b2424/main_open_world.py#L163). Note that the optimizer is initialized after this step, and during initialization, it ignores the parameters that do not have gradients.
+```
+if args.cooling:
+  print('-------------------------------cooling------------------------------------')
+  for name, param in model_without_ddp.named_parameters():
+    if not 'class_embed' in name:
+      param.requires_grad = False
+```
+- Add the following code to loss_labels, you can start the training! Code can be found [here](https://github.com/DIG-Beihang/ALL-OWOD/blob/5f05d39f9c6f6edc405eb269be720d5a291b2424/models/deformable_detr.py#L350)
+```
+target_classesAL = torch.full(src_logits.shape[:2], self.num_classes, dtype=torch.int64, device=src_logits.device)
+target_classes_u = torch.full(target_classes_o.size(), self.num_classes - 1, dtype=torch.int64, device=src_logits.device)
+target_classesAL[idx] = target_classes_u
+target_classes_onehotAL = torch.zeros([src_logits.shape[0], src_logits.shape[1], src_logits.shape[2] + 1],
+                                    dtype=src_logits.dtype, layout=src_logits.layout, device=src_logits.device)
+target_classes_onehotAL.scatter_(2, target_classesAL.unsqueeze(-1), 1)
+target_classes_onehotAL = target_classes_onehotAL[:,:,:-1]
+loss_ce_u = sigmoid_focal_loss(src_logits, target_classes_onehotAL, num_boxes, alpha=self.focal_alpha, gamma=2) * src_logits.shape[1]
+
+lam = 0
+if self.cooling:
+    lam = max(1 - (current_epoch - self.cooling_prev) / 20, 0)
+loss_ce = (1-lam) * loss_ce + lam * loss_ce_u
+```
+
 ## Install
 ### Requirements
 We have trained and tested our models on `Ubuntu 16.0`, `CUDA 10.2`, `GCC 5.4`, `Python 3.7`
