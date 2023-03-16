@@ -4,7 +4,7 @@
 
 This repository is the official PyTorch implemetation of paper "**Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection**".
 
-![image](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/AnnealingOWOD.png)
+![image](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/docs/AnnealingOWOD.png)
 <p align="center">
   <img src="https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/docs/framework.gif" alt="framework">
 </p>
@@ -14,6 +14,45 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 - In the `master` branch, we applied our method to the faster-rcnn framework, and in the `ow-detr` branch, we applied our method to the same deformable detr framework as ow-detr
 
 ## Key Code
+```
+.
+├── configs
+│   └── new1026
+│       ├── OWOD_new_split_eval.sh
+│       ├── OWOD_new_split_eval_t1_NC.sh
+│       ├── OWOD_new_split_eval_t2.sh
+│       ├── OWOD_new_split_eval_t3.sh
+│       ├── OWOD_ore_split_t1.sh
+│       ├── OWOD_ore_split_t1_extending.sh
+│       ├── OWOD_ore_split_t2.sh
+│       ├── OWOD_ore_split_t2_extending.sh
+│       ├── OWOD_ore_split_t2ft.sh
+│       ├── OWOD_ore_split_t3.sh
+│       ├── OWOD_ore_split_t3_extending.sh
+│       ├── OWOD_ore_split_t3ft.sh
+│       ├── OWOD_ore_split_t4.sh
+│       └── OWOD_ore_split_t4ft.sh
+├── main_open_world.py
+├── models
+│   └── deformable_detr.py
+├── requirements.txt
+└── scripts
+    ├── test_t1.sh
+    ├── test_t1_NC.sh
+    ├── test_t2.sh
+    ├── test_t2ft.sh
+    ├── test_t3.sh
+    ├── train_t1.sh
+    ├── train_t1_extending.sh
+    ├── train_t2.sh
+    ├── train_t2_extending.sh
+    ├── train_t2_ft.sh
+    ├── train_t3.sh
+    ├── train_t3_extending.sh
+    ├── train_t3_ft.sh
+    ├── train_t4.sh
+    └── train_t4_ft.sh
+```
 - We did not use the relevant innovations of ow-detr. Specifically, we removed --unmatched_boxes, --NC_branch, --nc_loss_coef, --top_unk, and --nc_epoch from the script to train the closed-set model, and added --cooling and --cooling_prev to train the extending stage model.
 - During the extending phase of the training, which is controlled by the args.cooling parameter, we need to freeze all parameters except for the classifier, and the specific code is [here](https://github.com/DIG-Beihang/ALL-OWOD/blob/5f05d39f9c6f6edc405eb269be720d5a291b2424/main_open_world.py#L163). Note that the optimizer is initialized after this step, and during initialization, it ignores the parameters that do not have gradients.
 ```

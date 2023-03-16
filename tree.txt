@@ -1,0 +1,37 @@
+.
+├── configs
+│   └── new1026
+│       ├── OWOD_new_split_eval.sh
+│       ├── OWOD_new_split_eval_t1_NC.sh
+│       ├── OWOD_new_split_eval_t2.sh
+│       ├── OWOD_new_split_eval_t3.sh
+│       ├── OWOD_ore_split_t1.sh
+│       ├── OWOD_ore_split_t1_extending.sh
+│       ├── OWOD_ore_split_t2.sh
+│       ├── OWOD_ore_split_t2_extending.sh
+│       ├── OWOD_ore_split_t2ft.sh
+│       ├── OWOD_ore_split_t3.sh
+│       ├── OWOD_ore_split_t3_extending.sh
+│       ├── OWOD_ore_split_t3ft.sh
+│       ├── OWOD_ore_split_t4.sh
+│       └── OWOD_ore_split_t4ft.sh
+├── main_open_world.py
+├── models
+│   └── deformable_detr.py
+├── requirements.txt
+└── scripts
+    ├── test_t1.sh
+    ├── test_t1_NC.sh
+    ├── test_t2.sh
+    ├── test_t2ft.sh
+    ├── test_t3.sh
+    ├── train_t1.sh
+    ├── train_t1_extending.sh
+    ├── train_t2.sh
+    ├── train_t2_extending.sh
+    ├── train_t2_ft.sh
+    ├── train_t3.sh
+    ├── train_t3_extending.sh
+    ├── train_t3_ft.sh
+    ├── train_t4.sh
+    └── train_t4_ft.sh
