@@ -316,14 +316,6 @@ class FastRCNNOutputs:
             self._log_accuracy()
             self.pred_class_logits[:, self.invalid_class_range] = -10e10
             storage = get_event_storage()
-            #loss_pred = \
-            #    F.cross_entropy(self.pred_class_logits, self.ori_classes, reduction="mean", weight=self.weights)
-                #lam*F.cross_entropy(self.pred_class_logits, self.gt_classes, reduction="mean", weight=self.weights)
-            #self.pred_class_logits = self.pred_class_logits.scatter(1, self.ori_classes.unsqueeze(-1), -10e10)
-            #self.pred_class_logits = self.pred_class_logits.index_put((index0, index1), torch.full_like(index0, -10e10, dtype=torch.float).to(index0.device))
-            #loss_pred2 = \
-            #    F.cross_entropy(self.pred_class_logits, self.gt_classes, reduction="mean", weight=self.weights)
-            #return loss_pred + self.beta / 10 * loss_pred2
             if self.cooling:
                 lam = max(self.peak - (storage.iter / self.cool_iter), 0)
             else:

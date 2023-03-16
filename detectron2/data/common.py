@@ -42,13 +42,7 @@ class MapDataset(data.Dataset):
             if data is not None:
                 self._fallback_candidates.add(cur_idx)
                 if self._map_func.is_train:
-                    #num_instances = len(data['instances'])
-                    #import torch
-                    #torch.manual_seed(100)
-                    #p = torch.rand(num_instances)
-                    # import pdb; pdb.set_trace()
                     data['instances'].ori_classes = data['instances'].gt_classes.clone()
-                    #data['instances'].gt_classes[p < 0.2] = 80
                     data['instances'].gt_classes[:] = 80
                 return data
 
