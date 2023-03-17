@@ -12,7 +12,7 @@ from .mask_head import (
     BaseMaskRCNNHead,
     MaskRCNNConvUpsampleHead,
 )
-from .roi_heads import (
+from .AnneallingLT_heads import (
     ROI_HEADS_REGISTRY,
     ROIHeads,
     Res5ROIHeads,

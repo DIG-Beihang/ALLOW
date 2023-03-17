@@ -16,7 +16,7 @@ from detectron2.utils.env import seed_all_rng
 from detectron2.utils.logger import log_first_n
 
 from .catalog import DatasetCatalog, MetadataCatalog
-from .common import AspectRatioGroupedDataset, DatasetFromList, MapDataset
+from .LabelTrans_common import AspectRatioGroupedDataset, DatasetFromList, MapDataset
 from .dataset_mapper import DatasetMapper
 from .detection_utils import check_metadata_consistency
 from .samplers import InferenceSampler, RepeatFactorTrainingSampler, TrainingSampler

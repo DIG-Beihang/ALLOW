@@ -16,7 +16,7 @@ from detectron2.data.build import (
     trivial_batch_collator,
 )
 from detectron2.data.catalog import DatasetCatalog, Metadata, MetadataCatalog
-from detectron2.data.common import DatasetFromList, MapDataset
+from detectron2.data.LabelTrans_common import DatasetFromList, MapDataset
 from detectron2.data.samplers import InferenceSampler, RepeatFactorTrainingSampler, TrainingSampler
 from detectron2.utils.comm import get_world_size
 

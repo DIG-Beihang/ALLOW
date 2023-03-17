@@ -20,14 +20,19 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 
 Our code is based on the detectron2 framework to build, the main code directory is as follows： 
 
-```
+<html>
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 50%;">
+                <!--左侧内容-->
+                <pre><code>
 detectron2/
 ├── __init__.py
 ├── checkpoint
 ├── config
 │   └── defaults.py
 ├── data
-│   └── common.py
+│   └── LabelTrans_common.py
 ├── engine
 │   └── defaults.py
 ├── evaluation
@@ -37,8 +42,35 @@ detectron2/
     │   └── rcnn.py
     └── roi_heads
         ├── fast_rcnn.py
-        └── roi_heads.py
-```
+        └── AnneallingLT_heads.py
+            </code></pre>
+            </td>
+            <td style="width: 50%;">
+                <!--右侧内容-->
+                <pre><code>
+                detectron2/
+                ├── __init__.py
+                ├── checkpoint
+                ├── config
+                │   └── defaults.py
+                ├── data
+                │   └── common.py
+                ├── engine
+                │   └── defaults.py
+                ├── evaluation
+                │   └── pascal_voc_evaluation.py
+                └── modeling
+                    ├── meta_arch
+                    │   └── rcnn.py
+                    └── roi_heads
+                        ├── fast_rcnn.py
+                        └── roi_heads.py
+                </code></pre>
+            </td>
+        </tr>
+    </table>
+</html>
+
 **Our method is simple to implement but very effective!!!**
 
 **NOTE! You only need to enable our method during the extending stage.**

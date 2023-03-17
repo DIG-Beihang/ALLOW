@@ -1,7 +1,7 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 from detectron2.layers import batched_nms
 from detectron2.modeling import ROI_HEADS_REGISTRY, StandardROIHeads
-from detectron2.modeling.roi_heads.roi_heads import Res5ROIHeads
+from detectron2.modeling.roi_heads.AnneallingLT_heads import Res5ROIHeads
 from detectron2.structures import Instances
 
 
