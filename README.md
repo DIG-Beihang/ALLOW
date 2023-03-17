@@ -26,6 +26,7 @@ Our code is based on the detectron2 framework to build, the main code directory 
             <td style="width: 50%;">
                 <!--左侧内容-->
                 <pre><code>
+<strong>Faster rcnn-Based</strong> 
 .
 ├── detectron2
 │   ├── __init__.py
@@ -45,29 +46,30 @@ Our code is based on the detectron2 framework to build, the main code directory 
 │          ├── AnneallingLT_out.py
 │          └── AnneallingLT_heads.py
 ├── requirement.txt
-├── scripts
-│   ├── test_all.sh
-│   ├── test_t1.sh
-│   ├── test_t2.sh
-│   ├── test_t3.sh
-│   ├── test_t4.sh
-│   ├── train_t1_extending.sh
-│   ├── train_t1.sh
-│   ├── train_t2_extending.sh
-│   ├── train_t2_ft.sh
-│   ├── train_t2.sh
-│   ├── train_t3_extending.sh
-│   ├── train_t3_ft.sh
-│   ├── train_t3.sh
-│   ├── train_t4_ft.sh
-│   └── train_t4.sh
 ├── setup.cfg
-└── setup.py
+├── setup.py
+└── scripts
+    ├── test_all.sh
+    ├── test_t1.sh
+    ├── test_t2.sh
+    ├── test_t3.sh
+    ├── test_t4.sh
+    ├── train_t1_extending.sh
+    ├── train_t1.sh
+    ├── train_t2_extending.sh
+    ├── train_t2_ft.sh
+    ├── train_t2.sh
+    ├── train_t3_extending.sh
+    ├── train_t3_ft.sh
+    ├── train_t3.sh
+    ├── train_t4_ft.sh
+    └── train_t4.sh
             </code></pre>
             </td>
             <td style="width: 50%;">
                 <!--右侧内容-->
                 <pre><code>
+<strong>DETR-Based</strong> 
 .
 ├── configs
 │   └── new1026
