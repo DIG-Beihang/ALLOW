@@ -17,6 +17,9 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 - If you want to learn more about the disentanglement and the visualization of our approach, please check out the [supplementary video](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/docs/video%20(4).mp4).
 
 ## Key Code
+
+Our code is based on the detectron2 framework to build, the main code directory is as follows： 
+
 ```
 detectron2/
 ├── __init__.py
