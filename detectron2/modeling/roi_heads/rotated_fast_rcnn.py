@@ -12,8 +12,8 @@ from ..box_regression import Box2BoxTransformRotated
 from ..poolers import ROIPooler
 from ..proposal_generator.proposal_utils import add_ground_truth_to_proposals
 from .box_head import build_box_head
-from .fast_rcnn import FastRCNNOutputLayers
-from .roi_heads import ROI_HEADS_REGISTRY, StandardROIHeads
+from .AnneallingLT_out import FastRCNNOutputLayers
+from .AnneallingLT_heads import ROI_HEADS_REGISTRY, StandardROIHeads
 
 logger = logging.getLogger(__name__)
 

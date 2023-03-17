@@ -5,7 +5,7 @@ import torch
 
 from detectron2.layers import ShapeSpec
 from detectron2.modeling.box_regression import Box2BoxTransform, Box2BoxTransformRotated
-from detectron2.modeling.roi_heads.fast_rcnn import FastRCNNOutputLayers
+from detectron2.modeling.roi_heads.AnneallingLT_out import FastRCNNOutputLayers
 from detectron2.modeling.roi_heads.rotated_fast_rcnn import RotatedFastRCNNOutputLayers
 from detectron2.structures import Boxes, Instances, RotatedBoxes
 from detectron2.utils.events import EventStorage

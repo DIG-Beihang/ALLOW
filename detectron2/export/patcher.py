@@ -7,7 +7,7 @@ import torch
 from detectron2.modeling import poolers
 from detectron2.modeling.proposal_generator import rpn
 from detectron2.modeling.roi_heads import keypoint_head, mask_head
-from detectron2.modeling.roi_heads.fast_rcnn import FastRCNNOutputLayers
+from detectron2.modeling.roi_heads.AnneallingLT_out import FastRCNNOutputLayers
 
 from .c10 import (
     Caffe2Compatible,

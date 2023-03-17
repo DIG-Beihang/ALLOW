@@ -21,7 +21,7 @@ from .AnneallingLT_heads import (
     select_foreground_proposals,
 )
 from .rotated_fast_rcnn import RROIHeads
-from .fast_rcnn import FastRCNNOutputLayers
+from .AnneallingLT_out import FastRCNNOutputLayers
 
 from . import cascade_rcnn  # isort:skip
 

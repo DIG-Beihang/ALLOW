@@ -13,8 +13,8 @@ from ..box_regression import Box2BoxTransform
 from ..matcher import Matcher
 from ..poolers import ROIPooler
 from .box_head import build_box_head
-from .fast_rcnn import FastRCNNOutputLayers, fast_rcnn_inference
-from .roi_heads import ROI_HEADS_REGISTRY, StandardROIHeads
+from .AnneallingLT_out import FastRCNNOutputLayers, fast_rcnn_inference
+from .AnneallingLT_heads import ROI_HEADS_REGISTRY, StandardROIHeads
 
 
 class _ScaleGradient(Function):

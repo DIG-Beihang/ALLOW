@@ -26,45 +26,85 @@ Our code is based on the detectron2 framework to build, the main code directory 
             <td style="width: 50%;">
                 <!--左侧内容-->
                 <pre><code>
-detectron2/
-├── __init__.py
-├── checkpoint
-├── config
-│   └── defaults.py
-├── data
-│   └── LabelTrans_common.py
-├── engine
-│   └── defaults.py
-├── evaluation
-│   └── pascal_voc_evaluation.py
-└── modeling
-    ├── meta_arch
-    │   └── rcnn.py
-    └── roi_heads
-        ├── fast_rcnn.py
-        └── AnneallingLT_heads.py
+.
+├── detectron2
+│   ├── __init__.py
+│   ├── checkpoint
+│   ├── config
+│   │   └── defaults.py
+│   ├── data
+│   │   └── LabelTrans_common.py
+│   ├── engine
+│   │   └── defaults.py
+│   ├── evaluation
+│   │   └── pascal_voc_evaluation.py
+│   └── modeling
+│       ├── meta_arch
+│       │   └── rcnn.py
+│       └── roi_heads
+│          ├── AnneallingLT_out.py
+│          └── AnneallingLT_heads.py
+├── requirement.txt
+├── scripts
+│   ├── test_all.sh
+│   ├── test_t1.sh
+│   ├── test_t2.sh
+│   ├── test_t3.sh
+│   ├── test_t4.sh
+│   ├── train_t1_extending.sh
+│   ├── train_t1.sh
+│   ├── train_t2_extending.sh
+│   ├── train_t2_ft.sh
+│   ├── train_t2.sh
+│   ├── train_t3_extending.sh
+│   ├── train_t3_ft.sh
+│   ├── train_t3.sh
+│   ├── train_t4_ft.sh
+│   └── train_t4.sh
+├── setup.cfg
+└── setup.py
             </code></pre>
             </td>
             <td style="width: 50%;">
                 <!--右侧内容-->
                 <pre><code>
-                detectron2/
-                ├── __init__.py
-                ├── checkpoint
-                ├── config
-                │   └── defaults.py
-                ├── data
-                │   └── common.py
-                ├── engine
-                │   └── defaults.py
-                ├── evaluation
-                │   └── pascal_voc_evaluation.py
-                └── modeling
-                    ├── meta_arch
-                    │   └── rcnn.py
-                    └── roi_heads
-                        ├── fast_rcnn.py
-                        └── roi_heads.py
+.
+├── configs
+│   └── new1026
+│       ├── OWOD_new_split_eval.sh
+│       ├── OWOD_new_split_eval_t1_NC.sh
+│       ├── OWOD_new_split_eval_t2.sh
+│       ├── OWOD_new_split_eval_t3.sh
+│       ├── OWOD_ore_split_t1.sh
+│       ├── OWOD_ore_split_t1_extending.sh
+│       ├── OWOD_ore_split_t2.sh
+│       ├── OWOD_ore_split_t2_extending.sh
+│       ├── OWOD_ore_split_t2ft.sh
+│       ├── OWOD_ore_split_t3.sh
+│       ├── OWOD_ore_split_t3_extending.sh
+│       ├── OWOD_ore_split_t3ft.sh
+│       ├── OWOD_ore_split_t4.sh
+│       └── OWOD_ore_split_t4ft.sh
+├── main_open_world.py
+├── models
+│   └── AnneallingLT_detr.py
+├── requirements.txt
+└── scripts
+    ├── test_t1.sh
+    ├── test_t1_NC.sh
+    ├── test_t2.sh
+    ├── test_t2ft.sh
+    ├── test_t3.sh
+    ├── train_t1.sh
+    ├── train_t1_extending.sh
+    ├── train_t2.sh
+    ├── train_t2_extending.sh
+    ├── train_t2_ft.sh
+    ├── train_t3.sh
+    ├── train_t3_extending.sh
+    ├── train_t3_ft.sh
+    ├── train_t4.sh
+    └── train_t4_ft.sh
                 </code></pre>
             </td>
         </tr>
@@ -76,7 +116,7 @@ detectron2/
 **NOTE! You only need to enable our method during the extending stage.**
 
 **If it is not the extending stage, simply set cfg.OWOD.COOLING = False to easily disable this feature.**
-- First, modify the annotation of the data, we give all data an additional unknown class label, the code can be found [here](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/ade50266435d699ece227192e08a46c26d57784f/detectron2/data/common.py#L52)
+- First, modify the annotation of the data, we give all data an additional unknown class label, the code can be found [here](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/ade50266435d699ece227192e08a46c26d57784f/detectron2/data/LabelTrans_common.py#L52)
 ```
 if self._map_func.is_train:
   data['instances'].ori_classes = data['instances'].gt_classes.clone()
@@ -89,7 +129,7 @@ if cfg.OWOD.COOLING:
     if 'cls_score' not in name:
       param.requires_grad = False
 ```
-- Finally, after calling the new loss function, you can start the training! Code can be found [here](https://github.com/DIG-Beihang/ALL-OWOD/blob/c8bfcc8074407370184a48af58e20cdb22aa1aac/detectron2/modeling/roi_heads/fast_rcnn.py#L334).
+- Finally, after calling the new loss function, you can start the training! Code can be found [here](https://github.com/DIG-Beihang/ALL-OWOD/blob/c8bfcc8074407370184a48af58e20cdb22aa1aac/detectron2/modeling/roi_heads/AnneallingLT_out.py#L334).
 ```
 def mixup_loss(self):
   if self._no_instances:
