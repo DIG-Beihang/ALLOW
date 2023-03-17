@@ -48,23 +48,11 @@ Our code is built based on the detectron2 framework, the main code directory is 
 .
 ├── configs
 │   └── new1026
-│       ├── OWOD_new_split_eval.sh
-│       ├── OWOD_new_split_eval_t1_NC.sh
-│       ├── OWOD_new_split_eval_t2.sh
-│       ├── OWOD_new_split_eval_t3.sh
-│       ├── OWOD_ore_split_t1.sh
-│       ├── OWOD_ore_split_t1_extending.sh
-│       ├── OWOD_ore_split_t2.sh
-│       ├── OWOD_ore_split_t2_extending.sh
-│       ├── OWOD_ore_split_t2ft.sh
-│       ├── OWOD_ore_split_t3.sh
-│       ├── OWOD_ore_split_t3_extending.sh
-│       ├── OWOD_ore_split_t3ft.sh
-│       ├── OWOD_ore_split_t4.sh
-│       └── OWOD_ore_split_t4ft.sh
 ├── main_open_world.py
 └── models
     └── AnneallingLT_detr.py
+├── requirements.txt
+└── scripts
                 </code></pre>
             </td>
         </tr>
