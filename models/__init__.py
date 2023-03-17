@@ -7,7 +7,7 @@
 # Copyright (c) 2020 SenseTime. All Rights Reserved.
 # ------------------------------------------------------------------------
 
-from .deformable_detr import build
+from .AnneallingLT_detr import build
 
 
 def build_model(args):

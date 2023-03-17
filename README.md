@@ -34,7 +34,7 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 │       └── OWOD_ore_split_t4ft.sh
 ├── main_open_world.py
 ├── models
-│   └── deformable_detr.py
+│   └── AnneallingLT_detr.py
 ├── requirements.txt
 └── scripts
     ├── test_t1.sh
@@ -62,7 +62,7 @@ if args.cooling:
     if not 'class_embed' in name:
       param.requires_grad = False
 ```
-- Add the following code to loss_labels, you can start the training! Code can be found [here](https://github.com/DIG-Beihang/ALL-OWOD/blob/5f05d39f9c6f6edc405eb269be720d5a291b2424/models/deformable_detr.py#L350)
+- Add the following code to loss_labels, you can start the training! Code can be found [here](https://github.com/DIG-Beihang/ALL-OWOD/blob/5f05d39f9c6f6edc405eb269be720d5a291b2424/models/AnneallingLT_detr.py#L350)
 ```
 target_classesAL = torch.full(src_logits.shape[:2], self.num_classes, dtype=torch.int64, device=src_logits.device)
 target_classes_u = torch.full(target_classes_o.size(), self.num_classes - 1, dtype=torch.int64, device=src_logits.device)
