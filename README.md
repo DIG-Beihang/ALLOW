@@ -28,17 +28,15 @@ Our code is built based on the detectron2 framework, the main code directory is 
                 <pre><code>
 <strong>Faster rcnn-Based</strong> 
 .
-├── detectron2
-│   ├── __init__.py
-│   ├── data
-│   │   └── LabelTrans_common.py
-│   └── modeling
-│       ├── meta_arch
-│       │   └── rcnn.py
-│       └── roi_heads
-│          ├── AnneallingLT_out.py
-│          └── AnneallingLT_heads.py
-└── setup.py
+└── detectron2
+    ├── data
+    │   └── LabelTrans_common.py
+    └── modeling
+        ├── meta_arch
+        │   └── rcnn.py
+        └── roi_heads
+           ├── AnneallingLT_out.py
+           └── AnneallingLT_heads.py
             </code></pre>
             </td>
             <td style="width: 50%;">
