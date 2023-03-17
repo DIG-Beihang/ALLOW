@@ -33,6 +33,8 @@ detectron2/
 ├── evaluation
 │   └── pascal_voc_evaluation.py
 └── modeling
+    ├── meta_arch
+    │   └── rcnn.py
     └── roi_heads
         ├── fast_rcnn.py
         └── roi_heads.py
