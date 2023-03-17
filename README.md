@@ -18,7 +18,7 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 
 ## Key Code
 
-Our code is built based on the detectron2 framework, the main code directory is as follows, the left and right are the main code list of RCNN-based model and DETR-based model respectively： 
+Our main code directory is as follows, the left and right are the main code list of RCNN-based model and DETR-based model respectively： 
 
 <html>
     <table style="width: 100%;">
