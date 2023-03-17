@@ -18,8 +18,61 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 
 ## Key Code
 
-Our code is based on the detectron2 framework to build, the main code directory is as follows： 
+Our code is built based on the detectron2 framework, the main code directory is as follows, the left and right are the main code list of RCNN-based model and DETR-based model respectively： 
 
+<html>
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 50%;">
+                <!--左侧内容-->
+                <pre><code>
+<strong>Faster rcnn-Based</strong> 
+.
+└── detectron2
+    ├── __init__.py
+    ├── data
+    │   └── LabelTrans_common.py
+    └── modeling
+        ├── meta_arch
+        │   └── rcnn.py
+        └── roi_heads
+           ├── AnneallingLT_out.py
+           └── AnneallingLT_heads.py
+
+            </code></pre>
+            </td>
+            <td style="width: 50%;">
+                <!--右侧内容-->
+                <pre><code>
+<strong>DETR-Based</strong> 
+.
+├── configs
+│   └── new1026
+│       ├── OWOD_new_split_eval.sh
+│       ├── OWOD_new_split_eval_t1_NC.sh
+│       ├── OWOD_new_split_eval_t2.sh
+│       ├── OWOD_new_split_eval_t3.sh
+│       ├── OWOD_ore_split_t1.sh
+│       ├── OWOD_ore_split_t1_extending.sh
+│       ├── OWOD_ore_split_t2.sh
+│       ├── OWOD_ore_split_t2_extending.sh
+│       ├── OWOD_ore_split_t2ft.sh
+│       ├── OWOD_ore_split_t3.sh
+│       ├── OWOD_ore_split_t3_extending.sh
+│       ├── OWOD_ore_split_t3ft.sh
+│       ├── OWOD_ore_split_t4.sh
+│       └── OWOD_ore_split_t4ft.sh
+├── main_open_world.py
+└── models
+    └── AnneallingLT_detr.py
+
+                </code></pre>
+            </td>
+        </tr>
+    </table>
+</html>
+
+<!---
 <html>
     <table style="width: 100%;">
         <tr>
@@ -112,6 +165,7 @@ Our code is based on the detectron2 framework to build, the main code directory 
         </tr>
     </table>
 </html>
+-->
 
 **Our method is simple to implement but very effective!!!**
 
