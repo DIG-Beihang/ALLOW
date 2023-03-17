@@ -28,17 +28,42 @@ Our code is built based on the detectron2 framework, the main code directory is 
                 <pre><code>
 <strong>Faster rcnn-Based</strong> 
 .
-└── detectron2
-    ├── __init__.py
-    ├── data
-    │   └── LabelTrans_common.py
-    └── modeling
-        ├── meta_arch
-        │   └── rcnn.py
-        └── roi_heads
-           ├── AnneallingLT_out.py
-           └── AnneallingLT_heads.py
-
+├── detectron2
+│   ├── __init__.py
+│   ├── checkpoint
+│   ├── config
+│   │   └── defaults.py
+│   ├── data
+│   │   └── LabelTrans_common.py
+│   ├── engine
+│   │   └── defaults.py
+│   ├── evaluation
+│   │   └── pascal_voc_evaluation.py
+│   └── modeling
+│       ├── meta_arch
+│       │   └── rcnn.py
+│       └── roi_heads
+│          ├── AnneallingLT_out.py
+│          └── AnneallingLT_heads.py
+├── requirement.txt
+├── setup.cfg
+├── setup.py
+└── scripts
+    ├── test_all.sh
+    ├── test_t1.sh
+    ├── test_t2.sh
+    ├── test_t3.sh
+    ├── test_t4.sh
+    ├── train_t1_extending.sh
+    ├── train_t1.sh
+    ├── train_t2_extending.sh
+    ├── train_t2_ft.sh
+    ├── train_t2.sh
+    ├── train_t3_extending.sh
+    ├── train_t3_ft.sh
+    ├── train_t3.sh
+    ├── train_t4_ft.sh
+    └── train_t4.sh
             </code></pre>
             </td>
             <td style="width: 50%;">
@@ -63,9 +88,25 @@ Our code is built based on the detectron2 framework, the main code directory is 
 │       ├── OWOD_ore_split_t4.sh
 │       └── OWOD_ore_split_t4ft.sh
 ├── main_open_world.py
-└── models
-    └── AnneallingLT_detr.py
-
+├── models
+│   └── AnneallingLT_detr.py
+├── requirements.txt
+└── scripts
+    ├── test_t1.sh
+    ├── test_t1_NC.sh
+    ├── test_t2.sh
+    ├── test_t2ft.sh
+    ├── test_t3.sh
+    ├── train_t1.sh
+    ├── train_t1_extending.sh
+    ├── train_t2.sh
+    ├── train_t2_extending.sh
+    ├── train_t2_ft.sh
+    ├── train_t3.sh
+    ├── train_t3_extending.sh
+    ├── train_t3_ft.sh
+    ├── train_t4.sh
+    └── train_t4_ft.sh
                 </code></pre>
             </td>
         </tr>
