@@ -61,6 +61,8 @@ Our main code directory is as follows, the left and right are the main code list
 **Our method is simple to implement but very effective!!!**
 
 **If it is not the extending stage, simply set cfg.OWOD.COOLING = False to easily disable this feature.**
+
+<!---
 - First, modify the annotation of the data, we give all data an additional unknown class label, the code can be found [here](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/ade50266435d699ece227192e08a46c26d57784f/detectron2/data/LabelTrans_common.py#L52)
 ```
 if self._map_func.is_train:
@@ -92,6 +94,7 @@ def mixup_loss(self):
         lam*F.cross_entropy(self.pred_class_logits, self.gt_classes, reduction="mean", weight=self.weights)
     return loss_pred
 ```
+-->
 
 ## Install
 ### Requirements
