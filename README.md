@@ -26,7 +26,7 @@ Our main code directory is as follows, the left and right are the main code list
             <td style="width: 50%;">
                 <!--左侧内容-->
                 <pre><code>
-<strong>Faster rcnn-Based</strong> 
+<strong>Rcnn-Based</strong> 
 .
 └── detectron2
     ├── data
