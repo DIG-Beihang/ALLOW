@@ -14,7 +14,54 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 - In the `master` branch, we applied our method to the faster-rcnn framework, and in the `ow-detr` branch, we applied our method to the same deformable detr framework as ow-detr
 
 ## Key Code
-```
+<html>
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 50%;">
+                <!--左侧内容-->
+                <pre><code>
+.
+├── detectron2
+│   ├── __init__.py
+│   ├── checkpoint
+│   ├── config
+│   │   └── defaults.py
+│   ├── data
+│   │   └── LabelTrans_common.py
+│   ├── engine
+│   │   └── defaults.py
+│   ├── evaluation
+│   │   └── pascal_voc_evaluation.py
+│   └── modeling
+│       ├── meta_arch
+│       │   └── rcnn.py
+│       └── roi_heads
+│          ├── AnneallingLT_out.py
+│          └── AnneallingLT_heads.py
+├── requirement.txt
+├── scripts
+│   ├── test_all.sh
+│   ├── test_t1.sh
+│   ├── test_t2.sh
+│   ├── test_t3.sh
+│   ├── test_t4.sh
+│   ├── train_t1_extending.sh
+│   ├── train_t1.sh
+│   ├── train_t2_extending.sh
+│   ├── train_t2_ft.sh
+│   ├── train_t2.sh
+│   ├── train_t3_extending.sh
+│   ├── train_t3_ft.sh
+│   ├── train_t3.sh
+│   ├── train_t4_ft.sh
+│   └── train_t4.sh
+├── setup.cfg
+└── setup.py
+            </code></pre>
+            </td>
+            <td style="width: 50%;">
+                <!--右侧内容-->
+                <pre><code>
 .
 ├── configs
 │   └── new1026
@@ -52,7 +99,11 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
     ├── train_t3_ft.sh
     ├── train_t4.sh
     └── train_t4_ft.sh
-```
+                </code></pre>
+            </td>
+        </tr>
+    </table>
+</html>
 - We did not use the relevant innovations of ow-detr. Specifically, we removed --unmatched_boxes, --NC_branch, --nc_loss_coef, --top_unk, and --nc_epoch from the script to train the closed-set model, and added --cooling and --cooling_prev to train the extending stage model.
 - During the extending phase of the training, which is controlled by the args.cooling parameter, we need to freeze all parameters except for the classifier, and the specific code is [here](https://github.com/DIG-Beihang/ALL-OWOD/blob/5f05d39f9c6f6edc405eb269be720d5a291b2424/main_open_world.py#L163). Note that the optimizer is initialized after this step, and during initialization, it ignores the parameters that do not have gradients.
 ```
