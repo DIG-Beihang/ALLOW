@@ -99,7 +99,7 @@ def mixup_loss(self):
 ```
 -->
 
-## Install
+## Install for Faster rcnn-Based
 ### Requirements
 <!--- - Install detectron2, please refer to [INSTALL.md](./INSTALL.md). -->
 - python 3.7, cuda 10.2, torch1.10.1
@@ -111,8 +111,40 @@ def mixup_loss(self):
 - Put Annotations and JPEGImages inside datasets/VOC2007
 - Create folder datasets/VOC2007/ImageSets/Main
 - Put the content of datasets/OWOD_imagesets inside datasets/VOC2007/ImageSets/Main
-### Pretrained weights
+
+## Install for DETR-Based
+### Requirements
+We have trained and tested our models on `Ubuntu 16.0`, `CUDA 10.2`, `GCC 5.4`, `Python 3.7`
+
+```bash
+conda create -n owdetr python=3.7
+conda activate owdetr
+conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch
+pip install -r requirements.txt
+```
+### Compiling CUDA operators
+```bash
+cd ./models/ops
+sh ./make.sh
+# unit test (should see all checking is True)
+python test.py
+```
+### Data Preparation for ORE split
+- You can download the data set from [here](https://drive.google.com/drive/folders/1S5L-YmIiFMAKTs6nHMorB0Osz5iWI31k) and follow these steps to configure the path.
+The files should be organized in the following structure:
+```
+OW-DETR/
+└── data/
+    └── VOC2007/
+        └── OWOD/
+        	├── JPEGImages
+        	├── ImageSets
+        	└── Annotations
+```
+
+## Pretrained weights
 You can download the pre-trained backbone network models and the best OWOD models trained by ours methods for t1-t4 [here](https://drive.google.com/drive/folders/1baulMVqFWN-Vg_rVKJkkY3t_yAHtuhkJ?usp=sharing).
+
 ## Usage
 ### Training
 - Download the pre-trained backbone network model. `R-50.pkl` is for faster rcnn framwork and `dino_resnet50_pretrain.pth` is for ow-detr framwork.
