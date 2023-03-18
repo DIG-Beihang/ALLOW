@@ -3,7 +3,7 @@ module load anaconda/2020.11
 module load cuda/10.2
 module load cudnn/8.1.0.77_CUDA10.2
 module load gcc/5.4
-source activate hainandrop
+source activate hainan
 export PYTHONUNBUFFERED=1
 
 

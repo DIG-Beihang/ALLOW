@@ -35,8 +35,7 @@ Our key codes of the RCNN-based and DETR-based model are listed below, respectiv
         ├── meta_arch
         │   └── rcnn.py
         └── roi_heads
-           ├── AnneallingLT_out.py
-           └── AnneallingLT_heads.py
+            └── AnneallingLT_out.py
             </code></pre>
             </td>
             <td style="width: 50%;">
@@ -57,7 +56,10 @@ Our key codes of the RCNN-based and DETR-based model are listed below, respectiv
     </table>
 </html>
 
-- The code of RCNN-based model is built on detectron2 framework. The main structure of the model is set up in the [detectron2/modeling/meta_arch/rcnn.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/meta_arch/rcnn.py#L24). The Label-Transfer learning method can be found in the  [detectron2/data/LabelTrans_common.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/data/LabelTrans_common.py#L46). The Sawtooth Annealing Scheduling strategy is provided in [detectron2/modeling/roi_heads/AnnealingLT_heads.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/roi_heads/AnneallingLT_heads.py) and the Annealing classification loss is defined in [detectron2/modeling/roi_heads/AnnealingLT_out.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/roi_heads/AnneallingLT_out.py#L312)
+- The code of RCNN-based model is built on detectron2 framework. The main structure of the model is set up in the [detectron2/modeling/meta_arch/rcnn.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/meta_arch/rcnn.py#L24). The Label-Transfer learning method can be found in the  [detectron2/data/LabelTrans_common.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/data/LabelTrans_common.py#L46). The Sawtooth Annealing Scheduling strategy is provided in [detectron2/modeling/roi_heads/AnnealingLT_out.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/roi_heads/AnneallingLT_out.py#L312)
+<!---
+[detectron2/modeling/roi_heads/AnnealingLT_heads.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/roi_heads/AnneallingLT_heads.py) and the Annealing classification loss is defined in 
+-->
 
 - In the code of DETR-based model, both the Label-Transfer learning method and the Sawtooth Annealing Scheduling strategy are provided in [models/AnnealingLT_detr.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/detr-based/models/AnneallingLT_detr.py).
 
@@ -99,8 +101,10 @@ def mixup_loss(self):
 
 ## Install
 ### Requirements
-- Install detectron2, please refer to [INSTALL.md](./INSTALL.md).
+<!--- - Install detectron2, please refer to [INSTALL.md](./INSTALL.md). -->
+- python 3.7, cuda 10.2, torch1.10.1
 - pip install -r requirements.txt
+- pip install -e .
 ### Data Preparation for ORE split
 - You can download the data sets from [here](https://drive.google.com/drive/folders/1S5L-YmIiFMAKTs6nHMorB0Osz5iWI31k) and follow these steps to configure the path.
 - Create folder datasets/VOC2007
