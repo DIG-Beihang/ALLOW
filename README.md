@@ -57,13 +57,11 @@ Our key codes of the RCNN-based and DETR-based model are listed below, respectiv
     </table>
 </html>
 
-- The code of RCNN-based model is built on detectron2 framework. The main structure of the model is set up in the [detectron2/modeling/meta_arch/rcnn.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/meta_arch/rcnn.py#L24). The Label-Transfer learning method can be found in the  [detectron2/data/LabelTrans_common.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/data/LabelTrans_common.py#L46). The Sawtooth Annealing Scheduling strategy is provided in [detectron2/modeling/roi_heads/AnnealingLT_heads.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/roi_heads/AnnealingLT_heads.py#L46) and the Annealing classification loss is defined in [detectron2/modeling/roi_heads/AnnealingLT_out.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/data/modeling/roi_heads/AnnealingLT_out.py#L46)
+- The code of RCNN-based model is built on detectron2 framework. The main structure of the model is set up in the [detectron2/modeling/meta_arch/rcnn.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/meta_arch/rcnn.py#L24). The Label-Transfer learning method can be found in the  [detectron2/data/LabelTrans_common.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/data/LabelTrans_common.py#L46). The Sawtooth Annealing Scheduling strategy is provided in [detectron2/modeling/roi_heads/AnnealingLT_heads.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/roi_heads/AnneallingLT_heads.py) and the Annealing classification loss is defined in [detectron2/modeling/roi_heads/AnnealingLT_out.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/roi_heads/AnneallingLT_out.py#L312)
 
 - In the code of DETR-based model, both the Label-Transfer learning method and the Sawtooth Annealing Scheduling strategy are provided in [models/AnnealingLT_detr.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/detr-based/models/AnneallingLT_detr.py).
 
-**Our method is simple to implement but very effective!!!**
-
-**If it is not the extending stage, simply set cfg.OWOD.COOLING = False to easily disable this feature.**
+- In the forming stage, we set the cfg.OWOD.COOLING = False to place the disentanglement degree $\lambda = 0$ and form entangled known proposals. In the extending stage, we simply set the cfg.OWOD.COOLING = True to begin the collaborative learning of known and unknown classes.
 
 <!---
 - First, modify the annotation of the data, we give all data an additional unknown class label, the code can be found [here](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/ade50266435d699ece227192e08a46c26d57784f/detectron2/data/LabelTrans_common.py#L52)
