@@ -113,7 +113,8 @@ You can download the pre-trained backbone network models and the best OWOD model
 ### Training
 - Download the pre-trained backbone network model. `R-50.pkl` is for faster rcnn framwork and `dino_resnet50_pretrain.pth` is for ow-detr framwork.
 - Set the path of the pretrained model in the configs.
-- You can run `train_*.sh` in stages in the `scripts` folder, Where `_t*_ `represents t1-t4 tasks. Scripts without endings (e.g. train_t2.sh) represent the increment process of forming stage. Scripts with `ft` endings (e.g. train_t2_ft.sh) represent the fine-tuning process of forming stage, and scripts with `_extending` endings  (e.g. train_t2_extending.sh) represent the extending stage. (Task t1 does not need to be fine-tuned because it has no previously known classes.) You should run in order such as:
+- You can run `train_*.sh` in stages in the `scripts` folder, Where `_t*_ `represents t1-t4 tasks. Scripts without endings (e.g. train_t2.sh) represent the increment process of forming stage. Scripts with `ft` endings (e.g. train_t2_ft.sh) represent the fine-tuning process of forming stage, and scripts with `_extending` endings  (e.g. train_t2_extending.sh) represent the extending stage. (Task t1 does not need to be fine-tuned because it has no previously known classes.) 
+- You should run in order such as:
 ```
 bash train_t2.sh
 bash train_t2_ft.sh
