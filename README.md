@@ -12,13 +12,13 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 -->
 
 **NOTE**: 
-- In the code, We use the `cooling` variable to refer to the `extending` phase of a paper.
+
 - In the `master` branch, we applied our method to the faster-rcnn framework, and in the `ow-detr` branch, we applied our method to the same deformable detr framework as ow-detr.
 - If you want to learn more about the disentanglement and the visualization of our approach, please check out the [supplementary video](https://github.com/DIG-Beihang/Annealing-based-Label-Transfer-Learning-for-Open-World-Object-Detection/blob/master/docs/video%20(4).mp4).
 
 ## Key Code
 
-Our main code directory is as follows, the left and right are the main code list of RCNN-based model and DETR-based model respectively： 
+Our key codes of the RCNN-based and DETR-based model are listed below, respectively： 
 
 <html>
     <table style="width: 100%;">
@@ -57,6 +57,9 @@ Our main code directory is as follows, the left and right are the main code list
     </table>
 </html>
 
+- The code of RCNN-based model is built on detectron2 framework. The main structure of the model is set up in the [detectron2/modeling/meta_arch/rcnn.py.](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/meta_arch/rcnn.py#L24). The Label-Transfer learning method can be found in the  [detectron2/data/LabelTrans_common.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/data/LabelTrans_common.py#L46). The Sawtooth Annealing Scheduling strategy is provided in [detectron2/modeling/roi_heads/AnnealingLT_heads.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/roi_heads/AnnealingLT_heads.py#L46) and the Annealing classification loss is defined in [detectron2/modeling/roi_heads/AnnealingLT_out.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/data/modeling/roi_heads/AnnealingLT_out.py#L46)
+
+- In the code of DETR-based model, both the Label-Transfer learning method and the Sawtooth Annealing Scheduling strategy are provided in [models/AnnealingLT_detr.py].
 
 **Our method is simple to implement but very effective!!!**
 
