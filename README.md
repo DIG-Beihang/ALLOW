@@ -107,7 +107,7 @@ def mixup_loss(self):
 ## Install for RCNN-Based
 ### Requirements
 <!--- - Install detectron2, please refer to [INSTALL.md](./INSTALL.md). -->
-- python 3.7, cuda 10.2, torch1.10.1
+- python 3.7, cuda 11.1, torch1.10.1
 - pip install -r requirements.txt
 - pip install -e .
 ### Data Preparation for ORE split
