@@ -124,7 +124,7 @@ We have trained and tested our models on `Ubuntu 16.0`, `CUDA 10.2`, `GCC 5.4`, 
 ```bash
 conda create -n owdetr python=3.7
 conda activate owdetr
-conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch
+conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch
 pip install -r requirements.txt
 ```
 ### Compiling CUDA operators
