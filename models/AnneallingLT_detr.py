@@ -334,7 +334,9 @@ class SetCriterion(nn.Module):
         target_classes_onehot = target_classes_onehot[:,:,:-1]
         loss_ce = sigmoid_focal_loss(src_logits, target_classes_onehot, num_boxes, alpha=self.focal_alpha, gamma=2) * src_logits.shape[1]
 
-        # Annealing mixup
+        #  Annealing-based Label-Transfer learning: 
+        
+        # Label-Transfer: transfer the original one-hot label of the object to the unknown class.
         target_classesAL = torch.full(src_logits.shape[:2], self.num_classes, dtype=torch.int64, device=src_logits.device)
         target_classes_u = torch.full(target_classes_o.size(), self.num_classes - 1, dtype=torch.int64, device=src_logits.device)
         target_classesAL[idx] = target_classes_u
@@ -343,7 +345,8 @@ class SetCriterion(nn.Module):
         target_classes_onehotAL.scatter_(2, target_classesAL.unsqueeze(-1), 1)
         target_classes_onehotAL = target_classes_onehotAL[:,:,:-1]
         loss_ce_u = sigmoid_focal_loss(src_logits, target_classes_onehotAL, num_boxes, alpha=self.focal_alpha, gamma=2) * src_logits.shape[1]
-
+        
+        # Sawtooth Annealing Scheduling: adjust the disentanglement degree to accomplish the co-learning.
         lam = 0
         if self.cooling:
             lam = max(1 - (current_epoch - self.cooling_prev) / 20, 0)
