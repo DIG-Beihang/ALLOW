@@ -309,6 +309,8 @@ class FastRCNNOutputs:
             
         return cross_loss
 
+    # Sawtooth Annealing Tranning Scheduling:
+    # Accomplish the collaborative learning of known and unknown classes through adjusting the disentanglement degree.
     def mixup_loss(self):
         if self._no_instances:
             return 0.0 * self.pred_class_logits.sum()
