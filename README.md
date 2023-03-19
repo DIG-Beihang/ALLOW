@@ -13,7 +13,7 @@ This repository is the official PyTorch implemetation of paper "**Annealing-base
 
 **NOTE**: 
 
-- In the `master` branch, we applied our method to the faster-rcnn framework, and in the `ow-detr` branch, we applied our method to the same deformable detr framework as ow-detr.
+- In the `master` branch, we applied our method to the Faster-RCNN framework, and in the `ow-detr` branch, we applied our method to the same Deformable DETR framework as ow-detr.
 - If you want to learn more about the disentanglement and the visualization of our approach, please check out the [supplementary video](https://drive.google.com/file/d/1nAimggG9peKPTTCzcmALhDhyxDq8hV6z/view?usp=share_link).
 
 ## Key Code
