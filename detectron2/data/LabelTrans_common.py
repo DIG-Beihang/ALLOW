@@ -41,6 +41,8 @@ class MapDataset(data.Dataset):
             data = self._map_func(self._dataset[cur_idx])
             if data is not None:
                 self._fallback_candidates.add(cur_idx)
+                # Label-Transfer: endow all data an additional unknown class label,
+                # so as to transfer the original one-hot label of the object to the unknown class
                 if self._map_func.is_train:
                     data['instances'].ori_classes = data['instances'].gt_classes.clone()
                     data['instances'].gt_classes[:] = 80
