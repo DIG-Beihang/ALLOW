@@ -61,7 +61,7 @@ Our key codes of the RCNN-based and DETR-based model are listed below, respectiv
 [detectron2/modeling/roi_heads/AnnealingLT_heads.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/master/detectron2/modeling/roi_heads/AnneallingLT_heads.py) and the Annealing classification loss is defined in 
 -->
 
-- In the code of DETR-based model, both the Label-Transfer learning method and the Sawtooth Annealing Scheduling strategy are provided in [models/AnnealingLT_detr.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/detr-based/models/AnneallingLT_detr.py).
+- In the code of DETR-based model, both the Label-Transfer learning method and the Sawtooth Annealing Scheduling strategy are provided in [models/AnnealingLT_detr.py](https://github.com/DIG-Beihang/ALL-OWOD/blob/detr-based/models/AnneallingLT_detr.py#L337).
 
 - In the forming stage, we set the cfg.OWOD.COOLING = False to place the disentanglement degree $\lambda = 0$ and form entangled known proposals. In the extending stage, we simply set the cfg.OWOD.COOLING = True to begin the collaborative learning of known and unknown classes.
 
